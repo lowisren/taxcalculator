@@ -1,0 +1,194 @@
+<!-- Author: Lauren Etheridge
+	 ITD212 | Prof. Oliverio
+	 Programming Assign 1 | Federal Tax Calculator
+	 Date: 14 March 2017 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Married - Federal Tax Calculator</title>
+
+ <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">  
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/raleway:n5:default.js" type="text/javascript"></script>
+</head>
+<body background="images/black_family.jpg">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#inverseNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+			<a class="navbar-brand" href="#">
+				<img src="images/trousers_logo.png" width="20" height="40"/>
+			<h5>PANTS FINANICIAL MANAGEMENT</h5>
+       		</a>
+       	</div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="inverseNavbar1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="individual.html">Single</a></li>
+            <li class="active"><a href="married.html">Married<span class="sr-only">(current)</span></a></li>
+            <li><a href="https://www.irs.gov">IRS</a></li>
+            <li><a href="https://turbotax.intuit.com">Turbo Tax</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+</nav>
+
+<div class="container-fluid">
+  <div class="row text-center">
+    <div class="col-md-12 text-center">
+      <div class="jumbotron" id="singletron">
+        <h3>Please <strong>Enter All Information </strong>to Calculate your Married Income Tax Liability.</h3>
+      </div> 
+    </div>
+  </div>
+  <hr>
+   
+   <form>
+   <div class="row">
+   
+    <div class="col-sm-4 text-center">
+	   <div class="form-group">
+		  <label for="fullName">Full Name</label>
+		  <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+	   </div>
+	</div>
+	   
+	  <div class="col-sm-4 text-center">
+	  	<div class="form-group">
+		  <label for="pin">PIN</label>
+		  <input type="number" class="form-control" id="pin" placeholder="Enter PIN #" autocomplete="off">
+		</div>
+	  </div>
+	   
+   	 <div class="col-sm-4 text-center">
+   		<div class="form-group">
+		  <label for="grssIncome">Gross Income</label>
+		  <input type="number" class="form-control" id="grssIncome" placeholder="Enter gross income">
+		</div>
+	 </div>
+	</div>
+	
+<hr>
+	<div class="row">
+    	<div class="text-center col-md-12">
+   		  <div class="jumbotron" id="deductron">
+   			<div class="dropdown theme-dropdown clearfix">
+			  <button class="btn btn-lg dropdown-toggle" type="button" id="deductbtn" data-toggle="dropdown">Select Deduction <span class="caret"></span>
+					</button>	
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="drpDeduction">
+						<li><a href ="#" data-value="12600" >Apply Standard $12600 Deduction</a></li>
+						<li><a href ="#" data-value="0" >Do not apply deduction</a></li>
+					</ul>
+			  </div>
+			  <h3 id="standDeduction"></h3>
+		    </div>
+   		 </div>
+  	</div>
+<hr>
+	<div class="row">
+   		<div class="text-center col-md-2 col-sm-2">
+	   <div class="form-group">
+		  <button type="submit" class="btn btn-lg" id="submit">Submit</button>
+		</div>
+		</div>
+		<div class="text-center col-md-2 col-sm-2">
+		<div class="form-group">
+		  <button type="reset" class="btn btn-lg" id="reset">Reset</button>
+		</div>
+		</div>
+		<div class="text-center col-sm-6 col-sm-offset-2">
+		   <div class="form-group">
+		  <label for="incomeTax">Tax Obligation</label>
+		  <h3 id="incomeTax" class="form-control-static">$</h3>
+	      </div>
+	</div>	 
+	</div>
+</form>  
+  <hr>
+  <div class="row">
+    <footer class="text-center col-md-6 col-md-offset-3">
+      <h4>Lauren Etheridge</h4>
+      <p>ITD212 | Programming Assignment 1 | Federal Tax Caculator</p>
+    </footer>
+  </div>
+	</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Custom JS for Individual Tax Calculator -->
+    <script>
+	// Global Variables
+		var incomeTax = 0;
+		var totalDue = 0;
+	// JQuery Click Function to display deduction selection from dropdown
+		$('#drpDeduction li a').on('click', function(){
+			var deductionValue = $(this).data().value;
+			$('#standDeduction').html("The Deduction Applied Is $" + deductionValue);
+		});
+		
+		// Submit
+		$('form').submit(function(event) {
+			federalTaxCalc();
+			event.preventDefault();
+		});
+		
+		// Reset 
+		$('#reset').click(function(){
+			document.getElementById("standDeduction").innerHTML = "";
+			document.getElementById("incomeTax").innerHTML = "";	
+		});
+	 	// Tax Calculator function
+		function federalTaxCalc() {
+		totalDue = $('#grssIncome').val();
+		totalDue -= $('deductionValue').text();
+		if(totalDue >= 0){
+			if (totalDue <= 18550){
+				incomeTax = (totalDue * .1);			
+			}
+			else if (totalDue <= 75300) {
+				incomeTax = 1855 + ((totalDue - 18550) * .15); 
+			}
+			else if (totalDue <= 151900) {
+				incomeTax = 10367.50 + ((totalDue - 75300) * .25); 
+			}
+			else if (totalDue <= 231450) {
+				incomeTax = 29517.50 + ((totalDue - 151900) * .28); 
+			}
+			else if(totalDue <= 413350) {
+				incomeTax = 51791.50 + ((totalDue - 231450) * .33);
+			}
+			else if(totalDue <= 466950) {
+				incomeTax = 111818.50 + ((totalDue - 413350) * .35);
+			}
+			else if(totalDue >= 466951) {
+				incomeTax = 130578.50 + ((totalDue - 466950) * .396)
+			}
+			$("#incomeTax").text("Total Tax Bill $" + incomeTax);
+		}
+		else $("#incomeTax").text("Please enter a number greater than or equal to 0");
+		}
+	</script>
+</body>
+</html>
